@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dash</title>
+</head>
+<body>
+    <h1>Welcome, @ViewBag.Info.FirstName  @ViewBag.Info.LastName</h1>
+    <h3>Current balance: $@ViewBag.Info.Balance</h3>
+    
+    <form action="/withdraw" method="POST">
+        @model BankAccount.Models.Withdrawal
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount"/>
+        <span asp-validation-for="Amount"></span><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    @Html.Partial("Transactions")
+
+</body>
+</html>

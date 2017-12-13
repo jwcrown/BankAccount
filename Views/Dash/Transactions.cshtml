@@ -1,0 +1,14 @@
+
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>Date</th>                
+    </tr>
+    @foreach (var n in ViewBag.Info.Withdrawals)
+    {
+        <tr>
+            <td>$@n.Amount</td>
+            <td>$@n.CreatedAt</td>
+        </tr>
+    }
+</table>
